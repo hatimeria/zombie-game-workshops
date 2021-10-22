@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <h1 class="title">Gra zombie</h1>
+    <p class="mb-3">Spróbuj odgadnąć hasło, zanim dopadnie Cię zombie!</p>
     <secret-word :secret="secret" />
     <div class="columns">
       <div class="column">
