@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="title">Gra zombie</h1>
+    <secret-word :secret="secret" />
+    <div class="columns">
+      <div class="column">
+        <letters-table />
+      </div>
+      <div class="column">
+        <p>Pomyłki: 0/6</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LettersTable from './components/LettersTable'
+import SecretWord from './components/SecretWord'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LettersTable,
+    SecretWord
+  },
+  data: function () {
+    return {
+      secret: 'apokalipsa zombie'
+    }
   }
 }
 </script>
