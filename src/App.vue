@@ -1,12 +1,32 @@
 <template>
   <div id="app">
+    <h1 class="title">Gra zombie</h1>
+    <secret-word :secret="secret" />
+    <div class="columns">
+      <div class="column">
+        <letters-table />
+      </div>
+      <div class="column">
+        <p>Pomyłki: 0/6</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import LettersTable from './components/LettersTable'
+import SecretWord from './components/SecretWord'
+
 export default {
   name: 'App',
   components: {
+    LettersTable,
+    SecretWord
+  },
+  data: function () {
+    return {
+      secret: 'apokalipsa zombie'
+    }
   }
 }
 </script>
