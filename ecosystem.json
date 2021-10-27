@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "Zombie-Workshops",
+      "exec_mode": "cluster",
+      "instances": 1,
+      "script": "./node_modules/@vue/cli-service/bin/vue-cli-service.js",
+      "args": "start"
+    }
+  ]
+}
