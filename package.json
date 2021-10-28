@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "api": "json-server --watch db.json"
+    "api": "json-server --watch db.json --no-cors --read-only",
+    "prod": "vue-cli-service build && node src/server"
   },
   "dependencies": {
     "buefy": "^0.9.10",
