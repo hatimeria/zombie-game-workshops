@@ -2,6 +2,7 @@
   <div class="keyboard mx-auto">
   <!--    Dodaj wydarzenie po kliku-->
   <!--    WS: Explain v-for directive-->
+  <!--    WS: Explain disabled and includes function-->
   <b-button
     @click="chooseLetter(letter)"
     type="is-dark"
@@ -20,6 +21,7 @@ export default {
   name: 'Keyboard',
   // WS Explain props
   props: {
+    // WS: Explain types of props
     makeGuess: Function,
     usedLetters: Array,
     isGameStarted: Boolean
@@ -31,6 +33,7 @@ export default {
     }
   },
   methods: {
+    // WS: Explain how we pass arguments to functions
     chooseLetter (letter) {
       // WS: Explain emitting event
       if (this.isGameStarted) {
