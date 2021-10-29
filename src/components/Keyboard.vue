@@ -3,6 +3,7 @@
   <!--    Dodaj wydarzenie po kliku-->
   <!--    WS: Explain v-for directive-->
   <b-button
+    @click="chooseLetter"
     type="is-dark"
     v-for="letter in polishLetters"
     :key="letter"

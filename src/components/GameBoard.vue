@@ -2,10 +2,11 @@
   <div>
 <!--    Zaimportuj i dodaj zombie-->
 <!--    WS: Explain v-if/v-else-->
+    <zombie-figure v-if="isGameStarted" />
     <secret-word :secret="secret" v-if="isGameStarted" />
 <!--    Dodaj wydarzenie po kliku-->
 <!--    WS: Explain events (@click, but also @makeGuess below)-->
-    <b-button class="my-3" v-else>
+    <b-button @click="startGame" class="my-3" v-else>
       START
     </b-button>
     <p class="mb-3">
@@ -19,12 +20,14 @@
 import { EventBus } from './../main.js'
 import Keyboard from './Keyboard'
 import SecretWord from './SecretWord'
+import ZombieFigure from './ZombieFigure'
 
 export default {
   name: 'App',
   components: {
     Keyboard,
-    SecretWord
+    SecretWord,
+    ZombieFigure
   },
   // WS: Explain how data and methods work, explain type of variables
   data: function () {
@@ -37,7 +40,7 @@ export default {
   },
   methods: {
     startGame() {
-      // Zmień isGameStarted
+      this.isGameStarted = true
     },
     makeGuess() {
       EventBus.$emit('moveZombie', 'is-hited')
