@@ -3,7 +3,6 @@
   <!--    Dodaj wydarzenie po kliku-->
   <!--    WS: Explain v-for directive-->
   <b-button
-    @click="chooseLetter(letter)"
     type="is-dark"
     v-for="letter in polishLetters"
     :key="letter"
@@ -28,9 +27,9 @@ export default {
     }
   },
   methods: {
-    chooseLetter (letter) {
+    chooseLetter () {
       // WS: Explain emitting event
-      this.$emit('makeGuess', letter)
+      this.$emit('makeGuess')
     }
   }
 }

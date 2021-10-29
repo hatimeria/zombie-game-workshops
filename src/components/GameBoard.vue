@@ -12,7 +12,7 @@
     <p class="mb-3">
       Pomyłki: 0/6
     </p>
-    <keyboard @makeGuess="makeGuess" :usedLetters="usedLetters" :isGameStarted="isGameStarted" />
+    <keyboard @makeGuess="makeGuess" />
   </div>
 </template>
 
@@ -35,16 +35,14 @@ export default {
       secret: 'apokalipsa zombie',
       zombie: '',
       zombieId: null,
-      isGameStarted: false,
-      usedLetters: []
+      isGameStarted: false
     }
   },
   methods: {
     startGame() {
       this.isGameStarted = true
     },
-    makeGuess(letter) {
-      this.usedLetters.push(letter)
+    makeGuess() {
       EventBus.$emit('moveZombie', 'is-hited')
     }
   }
