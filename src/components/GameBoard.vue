@@ -1,14 +1,13 @@
 <template>
   <div>
-    <zombie-figure v-if="isGameStarted" />
     <secret-word :secret="secret" v-if="isGameStarted" />
-    <b-button @click="startGame" class="my-3" v-else>
+    <b-button class="my-3" v-else>
       START
     </b-button>
     <p class="mb-3">
       Pomyłki: 0/6
     </p>
-    <keyboard @action="action" />
+    <keyboard @makeGuess="makeGuess" />
   </div>
 </template>
 
@@ -16,14 +15,12 @@
 import { EventBus } from './../main.js'
 import Keyboard from './Keyboard'
 import SecretWord from './SecretWord'
-import ZombieFigure from './ZombieFigure'
 
 export default {
   name: 'App',
   components: {
     Keyboard,
-    SecretWord,
-    ZombieFigure
+    SecretWord
   },
   data: function () {
     return {
@@ -34,10 +31,7 @@ export default {
     }
   },
   methods: {
-    startGame () {
-      this.isGameStarted = true
-    },
-    action() {
+    makeGuess() {
       EventBus.$emit('moveZombie', 'is-hited')
     }
   }

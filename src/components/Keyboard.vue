@@ -1,7 +1,6 @@
 <template>
   <div class="keyboard mx-auto">
-    <b-button 
-      @click="chooseLetter"
+    <b-button
       type="is-dark"
       v-for="letter in polishLetters"
       :key="letter" 
@@ -15,7 +14,7 @@
 export default {
   name: 'Keyboard',
   props: {
-    action: Function
+    makeGuess: Function
   },
   data: function () {
     return {
@@ -24,7 +23,7 @@ export default {
   },
   methods: {
     chooseLetter () {
-      this.$emit('action')
+      this.$emit('makeGuess')
     }
   }
 }
