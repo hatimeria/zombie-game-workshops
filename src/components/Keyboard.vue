@@ -1,5 +1,6 @@
 <template>
   <div class="keyboard mx-auto">
+<!--    Dodaj wydarzenie po kliku-->
     <b-button
       type="is-dark"
       v-for="letter in polishLetters"

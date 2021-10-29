@@ -1,6 +1,8 @@
 <template>
   <div>
+<!--    Zaimportuj i dodaj zombie-->
     <secret-word :secret="secret" v-if="isGameStarted" />
+<!--    Dodaj wydarzenie po kliku-->
     <b-button class="my-3" v-else>
       START
     </b-button>
@@ -31,6 +33,9 @@ export default {
     }
   },
   methods: {
+    startGame() {
+      // Zmień isGameStarted
+    },
     makeGuess() {
       EventBus.$emit('moveZombie', 'is-hited')
     }
