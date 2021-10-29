@@ -1,8 +1,10 @@
 <template>
   <div>
 <!--    Zaimportuj i dodaj zombie-->
+<!--    WS: Explain v-if/v-else-->
     <secret-word :secret="secret" v-if="isGameStarted" />
 <!--    Dodaj wydarzenie po kliku-->
+<!--    WS: Explain events (@click, but also @makeGuess below)-->
     <b-button class="my-3" v-else>
       START
     </b-button>
@@ -24,6 +26,7 @@ export default {
     Keyboard,
     SecretWord
   },
+  // WS: Explain how data and methods work
   data: function () {
     return {
       secret: 'apokalipsa zombie',

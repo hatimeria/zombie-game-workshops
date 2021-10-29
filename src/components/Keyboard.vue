@@ -1,13 +1,14 @@
 <template>
   <div class="keyboard mx-auto">
-<!--    Dodaj wydarzenie po kliku-->
-    <b-button
-      type="is-dark"
-      v-for="letter in polishLetters"
-      :key="letter" 
-      class="mx-1 my-1 is-uppercase">
-      {{ letter }}
-    </b-button>
+  <!--    Dodaj wydarzenie po kliku-->
+  <b-button
+    type="is-dark"
+    v-for="letter in polishLetters"
+    :key="letter"
+    class="mx-1 my-1 is-uppercase">
+<!--    WS: Explain what {{}} is for-->
+    {{ letter }}
+  </b-button>
   </div>
 </template>
 
@@ -24,6 +25,7 @@ export default {
   },
   methods: {
     chooseLetter () {
+      // WS: Explain emitting event
       this.$emit('makeGuess')
     }
   }
