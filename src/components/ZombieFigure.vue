@@ -18,6 +18,7 @@ export default {
   mounted: function () {
     EventBus.$on('moveZombie', this.getZombie)
 
+    //TODO: replace 11 & 6 with length of zombies array, zombies array still needs to be done separately
     this.zombieId = Math.floor(Math.random() * (11 - 6) + 6)
     this.getZombie('idle')
   },
