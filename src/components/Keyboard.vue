@@ -7,7 +7,8 @@
     type="is-dark"
     v-for="letter in polishLetters"
     :key="letter"
-    class="mx-1 my-1 is-uppercase">
+    class="mx-1 my-1 is-uppercase"
+    :disabled="usedLetters.includes(letter)">
 <!--    WS: Explain what {{}} is for-->
     {{ letter }}
   </b-button>
@@ -19,7 +20,9 @@ export default {
   name: 'Keyboard',
   // WS Explain props
   props: {
-    makeGuess: Function
+    makeGuess: Function,
+    usedLetters: Array,
+    isGameStarted: Boolean
   },
   data: function () {
     return {
@@ -30,7 +33,9 @@ export default {
   methods: {
     chooseLetter (letter) {
       // WS: Explain emitting event
-      this.$emit('makeGuess', letter)
+      if (this.isGameStarted) {
+        this.$emit('makeGuess', letter)
+      }
     }
   }
 }
