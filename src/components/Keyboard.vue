@@ -1,6 +1,7 @@
 <template>
   <div class="keyboard mx-auto">
   <!--    Dodaj wydarzenie po kliku-->
+  <!--    WS: Explain v-for directive-->
   <b-button
     type="is-dark"
     v-for="letter in polishLetters"
@@ -15,11 +16,13 @@
 <script>
 export default {
   name: 'Keyboard',
+  // WS Explain props
   props: {
     makeGuess: Function
   },
   data: function () {
     return {
+      // WS: Explain what is array and how it works
       polishLetters: ['a', 'ą', 'b', 'c', 'ć', 'd', 'e', 'ę', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'ł', 'm', 'n', 'ń', 'o', 'ó', 'p', 'q', 'r', 's', 'ś', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ź', 'ż']
     }
   },

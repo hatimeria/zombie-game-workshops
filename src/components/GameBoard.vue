@@ -26,7 +26,7 @@ export default {
     Keyboard,
     SecretWord
   },
-  // WS: Explain how data and methods work
+  // WS: Explain how data and methods work, explain type of variables
   data: function () {
     return {
       secret: 'apokalipsa zombie',
