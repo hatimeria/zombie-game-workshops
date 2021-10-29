@@ -3,20 +3,15 @@
     <h1 class="title">Gra zombie</h1>
     <p class="mb-3">Spróbuj odgadnąć hasło, zanim dopadnie Cię zombie!</p>
     <zombie-figure v-if="isGameStarted" />
-    <b-button @click="startGame">START</b-button>
+    <b-button @click="startGame" class="my-3">START</b-button>
     <secret-word :secret="secret" v-if="isGameStarted" />
-    <div class="columns">
-      <div class="column">
-        <keyboard @action="action" />
-      </div>
-      <div class="column">
-        <p>Pomyłki: 0/6</p>
-      </div>
-    </div>
+    <p class="mb-3">Pomyłki: 0/6</p>
+    <keyboard @action="action" />
   </div>
 </template>
 
 <script>
+import { EventBus } from './main.js'
 import Keyboard from './components/Keyboard'
 import SecretWord from './components/SecretWord'
 import ZombieFigure from './components/ZombieFigure'
@@ -42,7 +37,7 @@ export default {
       this.isGameStarted = true;
     },
     action() {
-      console.log('aha')
+      EventBus.$emit('moveZombie', 'is-hited')
     }
   }
 }

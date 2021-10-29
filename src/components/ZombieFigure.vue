@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { EventBus } from './../main.js'
+
 export default {
   name: 'ZombieFigure',
   data: function () {
@@ -14,21 +16,23 @@ export default {
     }
   },
   mounted: function () {
+    EventBus.$on('moveZombie', this.getZombie)
+
     this.zombieId = Math.floor(Math.random() * (11 - 6) + 6)
-    this.getZombie('idle', this.zombieId)
+    this.getZombie('idle')
   },
   methods: {
-    getZombie (animation, id = this.zombieId) {
+    getZombie (animation) {
       switch (animation) {
           //TODO: need to attach clearInterval as well
         case 'idle':
-          setInterval(this.setZombieIdleAnimation(id), 750)
+          setInterval(this.setZombieIdleAnimation(this.zombieId), 750)
           break;
         case 'is-hited':
-          this.zombieIsHit(id)
+          this.zombieIsHit(this.zombieId)
           break
         default:
-          setInterval(this.setZombieIdleAnimation(id), 1000)
+          setInterval(this.setZombieIdleAnimation(this.zombieId), 1000)
       }
     },
     setZombieIdleAnimation (id) {

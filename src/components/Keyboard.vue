@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="keyboard mx-auto">
     <b-button 
       @click="chooseLetter"
       type="is-dark"
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// import { EventBus } from './../main.js'
 export default {
   name: 'Keyboard',
   props: {
@@ -30,3 +29,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.keyboard {
+  max-width: 500px;
+}
+</style>
