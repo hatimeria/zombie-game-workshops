@@ -5,7 +5,9 @@
           :key="idx"
           class="letter mx-1 is-uppercase has-text-weight-bold is-size-4"
           :class="{ space: letter === ' ' }"
-      />
+      >
+        <span v-if="usedLetters.includes(letter)">{{ letter }}</span>
+      </span>
   </div>
 </template>
 
@@ -13,7 +15,8 @@
 export default {
   name: 'SecretWord',
   props: {
-    secret: String
+    secret: String,
+    usedLetters: Array
   }
 }
 </script>

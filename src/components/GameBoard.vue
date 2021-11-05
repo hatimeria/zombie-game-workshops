@@ -3,14 +3,14 @@
 <!--    Zaimportuj i dodaj zombie-->
 <!--    WS: Explain v-if/v-else-->
     <zombie-figure v-if="isGameStarted" />
-    <secret-word :secret="secret" v-if="isGameStarted" />
+    <secret-word :secret="secret" :used-letters="usedLetters" v-if="isGameStarted" />
 <!--    Dodaj wydarzenie po kliku-->
 <!--    WS: Explain events (@click, but also @makeGuess below)-->
     <b-button @click="startGame" class="my-3" v-else>
       START
     </b-button>
     <p class="mb-3">
-      Pomyłki: 0/6
+      Pomyłki: {{ mistakeCounter }}/6
     </p>
     <keyboard @makeGuess="makeGuess" :used-letters="usedLetters" :is-game-started="isGameStarted" />
   </div>
@@ -36,7 +36,8 @@ export default {
       zombie: '',
       zombieId: null,
       isGameStarted: false,
-      usedLetters: []
+      usedLetters: [],
+      mistakeCounter: 0
     }
   },
   methods: {
@@ -46,7 +47,11 @@ export default {
     makeGuess(letter) {
       // WS: Explain push function
       this.usedLetters.push(letter)
-      EventBus.$emit('moveZombie', 'is-hited')
+      if (this.secret.includes(letter)) {
+        EventBus.$emit('moveZombie', 'is-hited')
+      } else {
+        this.mistakeCounter = this.mistakeCounter + 1
+      }
     }
   }
 }
