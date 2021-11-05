@@ -227,6 +227,66 @@
     {
       "id": 56,
       "value": "graniastosłup"
+    },
+    {
+      "id": 57,
+      "value": "kubuś puchatek"
+    },
+    {
+      "id": 58,
+      "value": "rzucać słowa na wiatr"
+    },
+    {
+      "id": 60,
+      "value": "mikroskop"
+    },
+    {
+      "id": 61,
+      "value": "kamizelka ratunkowa"
+    },
+    {
+      "id": 62,
+      "value": "worek na śmieci"
+    },
+    {
+      "id": 63,
+      "value": "spaghetti"
+    },
+    {
+      "id": 64,
+      "value": "kamizelka ratunkowa"
+    },
+    {
+      "id": 65,
+      "value": "zmarszczki"
+    },
+    {
+      "id": 66,
+      "value": "rozgwiazda"
+    },
+    {
+      "id": 67,
+      "value": "jaszczurka"
+    },
+    {
+      "id": 68,
+      "value": "hipopotam"
+    },
+    {
+      "id": 69,
+      "value": "ośmiornica"
+    },
+    {
+      "id": 70,
+      "value": "niedźwiedź polarny"
+    },
+    {
+      "id": 71,
+      "value": "gąsienica"
+    },
+    {
+      "id": 72,
+      "value": "pszczelarz"
     }
   ]
 }
