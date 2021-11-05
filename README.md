@@ -3,10 +3,12 @@
 Cześć, napiszemy dzisiaj razem grę! 🧟️
 
 ## Jak zacząć?
-Musisz zainstalować: 
+Jeśli nie zrobiłaś tego wcześniej, zainstaluj: 
 - Git (https://git-scm.com/downloads)
 - Node (https://nodejs.org/en/)
 - VSCode (https://code.visualstudio.com/) albo inny edytor kodu
+
+Po instalacjach zrestartuj komputer.
 
 Otwórz terminal (PowerShell na Windows), skopiuj, wklej i wykonaj poniższe komendy:
 
@@ -18,6 +20,8 @@ npm run serve
 ```
 
 I otwórz http://localhost:8080/ w przeglądarce ✨
+
+Pamiętaj, że przy każdym kroku możesz prosić nas o pomoc!
 
 ## Project setup
 ```
