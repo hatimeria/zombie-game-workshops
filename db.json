@@ -123,6 +123,174 @@
     {
       "id": 30,
       "value": "laboratorium"
+    },
+    {
+      "id": 31,
+      "value": "labrador"
+    },
+    {
+      "id": 32,
+      "value": "lawendowy"
+    },
+    {
+      "id": 33,
+      "value": "kamień filozoficzny"
+    },
+    {
+      "id": 34,
+      "value": "farmaceuta"
+    },
+    {
+      "id": 35,
+      "value": "paprykarz szczeciński"
+    },
+    {
+      "id": 36,
+      "value": "małomiasteczkowy"
+    },
+    {
+      "id": 37,
+      "value": "mandarynka"
+    },
+    {
+      "id": 38,
+      "value": "ogólnopolski"
+    },
+    {
+      "id": 39,
+      "value": "olimpijczyk"
+    },
+    {
+      "id": 40,
+      "value": "kalambury"
+    },
+    {
+      "id": 41,
+      "value": "orzechowy batonik"
+    },
+    {
+      "id": 42,
+      "value": "sala gimnastyczna"
+    },
+    {
+      "id": 43,
+      "value": "biblioteka szkolna"
+    },
+    {
+      "id": 44,
+      "value": "dżem brzoskwiniowy"
+    },
+    {
+      "id": 45,
+      "value": "chusteczka higieniczna"
+    },
+    {
+      "id": 46,
+      "value": "niezapominajka"
+    },
+    {
+      "id": 47,
+      "value": "najlepszy przyjaciel"
+    },
+    {
+      "id": 48,
+      "value": "wełniana czapka"
+    },
+    {
+      "id": 49,
+      "value": "częstotliwość"
+    },
+    {
+      "id": 50,
+      "value": "cyberprzemoc"
+    },
+    {
+      "id": 51,
+      "value": "szachownica"
+    },
+    {
+      "id": 52,
+      "value": "olej słonecznikowy"
+    },
+    {
+      "id": 53,
+      "value": "muchomor sromotnikowy"
+    },
+    {
+      "id": 54,
+      "value": "rzodkiewka"
+    },
+    {
+      "id": 55,
+      "value": "inteligencja"
+    },
+    {
+      "id": 56,
+      "value": "graniastosłup"
+    },
+    {
+      "id": 57,
+      "value": "kubuś puchatek"
+    },
+    {
+      "id": 58,
+      "value": "rzucać słowa na wiatr"
+    },
+    {
+      "id": 59,
+      "value": "złota rybka"
+    },
+    {
+      "id": 60,
+      "value": "mikroskop"
+    },
+    {
+      "id": 61,
+      "value": "kamizelka ratunkowa"
+    },
+    {
+      "id": 62,
+      "value": "worek na śmieci"
+    },
+    {
+      "id": 63,
+      "value": "spaghetti"
+    },
+    {
+      "id": 64,
+      "value": "kamizelka ratunkowa"
+    },
+    {
+      "id": 65,
+      "value": "zmarszczki"
+    },
+    {
+      "id": 66,
+      "value": "rozgwiazda"
+    },
+    {
+      "id": 67,
+      "value": "jaszczurka"
+    },
+    {
+      "id": 68,
+      "value": "hipopotam"
+    },
+    {
+      "id": 69,
+      "value": "ośmiornica"
+    },
+    {
+      "id": 70,
+      "value": "niedźwiedź polarny"
+    },
+    {
+      "id": 71,
+      "value": "gąsienica"
+    },
+    {
+      "id": 72,
+      "value": "pszczelarz"
     }
   ]
 }
