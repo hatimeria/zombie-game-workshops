@@ -41,7 +41,19 @@ export default {
     }
   },
   methods: {
-    startGame() {
+    // WS: Shortly explain async and await
+    async startGame() {
+      // Get total number of records (can be omitted during workshops)
+      const responseTotal = await fetch("/api/words?_page=1")
+      const total = responseTotal.headers.get('X-Total-Count')
+
+      // WS: Explain getting random number
+      const rand = Math.floor(Math.random() * total)
+      // WS: Explain fetching data from API
+      // WS: Optionally (if there is time) add and explain try/catch
+      const response = await fetch(`/api/words/${rand}`)
+      const data = await response.json()
+      this.secret = data.value
       this.isGameStarted = true
     },
     makeGuess(letter) {
