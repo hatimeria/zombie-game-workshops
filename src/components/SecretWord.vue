@@ -23,6 +23,7 @@ export default {
   display: inline-block;
   width: 25px;
   min-height: 36px;
+  vertical-align: bottom;
 }
 
 .letter:not(.space) {
