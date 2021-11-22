@@ -52,9 +52,14 @@ export default {
       // WS: Explain fetching data from API
       // WS: Optionally (if there is time) add and explain try/catch
       const response = await fetch(`/api/words/${rand}`)
-      const data = await response.json()
-      this.secret = data.value
-      this.isGameStarted = true
+      // WS: Explain status of the response and error handling
+      if (response.status === 200) {
+        const data = await response.json()
+        this.secret = data.value
+        this.isGameStarted = true
+      } else {
+        console.log(response);
+      }
     },
     makeGuess(letter) {
       // WS: Explain push function
