@@ -10,7 +10,7 @@
       START
     </b-button>
     <p class="mb-3">
-      Pomyłki: {{ mistakeCounter }}/6
+      Pomyłki: {{ mistakeCounter }}/{{ mistakeLimit }}
     </p>
     <keyboard @makeGuess="makeGuess" :used-letters="usedLetters" :is-game-started="isGameStarted" />
   </div>
@@ -37,7 +37,26 @@ export default {
       zombieId: null,
       isGameStarted: false,
       usedLetters: [],
-      mistakeCounter: 0
+      mistakeCounter: 0,
+      mistakeLimit: 6
+    }
+  },
+  // WS: Explain computed
+  computed: {
+    uniqueLetters() {
+      // WS: Explain replace and why we need to use it
+      const onlyLetters = this.secret.replace(' ', '');
+      // WS: Explain how we use Set to get array without duplicates
+      return Array.from(new Set(onlyLetters))
+    }
+  },
+  // WS: Explain watch
+  watch: {
+    mistakeCounter: function () {
+      if (this.mistakeCounter > this.mistakeLimit) {
+        this.$buefy.dialog.alert('You lost!');
+        this.resetGame();
+      }
     }
   },
   methods: {
@@ -66,9 +85,23 @@ export default {
       this.usedLetters.push(letter)
       if (this.secret.includes(letter)) {
         EventBus.$emit('moveZombie', 'is-hited')
+        this.checkIfUserWon()
       } else {
         this.mistakeCounter = this.mistakeCounter + 1
       }
+    },
+    checkIfUserWon() {
+      // WS: Explain .every()
+      if (this.uniqueLetters.every(letter => this.usedLetters.includes(letter))) {
+        // WS: Quickly explain what Buefy is and how we can use it to easily add dialog
+        this.$buefy.dialog.alert('You won!')
+        this.resetGame()
+      }
+    },
+    resetGame() {
+      this.isGameStarted = false
+      this.mistakeCounter = 0
+      this.usedLetters = []
     }
   }
 }
